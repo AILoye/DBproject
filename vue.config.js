@@ -6,7 +6,7 @@ module.exports = {
             "rexxar":{
                 target:"https://m.douban.com",
                 changeOrigin:true
-            }
+            },
         }
     },
     /**别名配置 */

@@ -16,11 +16,22 @@ const router = new VueRouter({
       path:"/",
       redirect:"/dbindex"
     },
+    {
+      name:"login",
+      path:"/login",
+      component:_=>import("@pages/login")
+    },
+    {
+      name:"detail",
+      path:"/detail/:id/:title",
+      component:_=>import("@pages/moviedetail"),
+      props:true
+    },
     dbindex,
     movie,
     book,
     group,
-    bean
+    bean,
   ]
 })
 // 全局守卫

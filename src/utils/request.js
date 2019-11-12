@@ -7,20 +7,21 @@ const server = axios.create({
 })
 
 // 请求拦截器
-server.interceptors.requst.use((config)=>{
+server.interceptors.request.use((config)=>{
     if(config.method = "get"){
-        config.params = {...config.data};
-        return config;
+        config.params = {...config.data};  
     }
+    return config;
 },(err)=>{
     return Promise.reject(err);
 })
 
 // 响应拦截
-server . interceptors.response.use((res)=>{
+server.interceptors.response.use((res)=>{
     if(res.status == 200){
         return res.data;
     }
+    return res;
 },(err)=>{
     return Promise.reject(err);
 })
