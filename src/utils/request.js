@@ -9,8 +9,12 @@ const server = axios.create({
 // 请求拦截器
 server.interceptors.request.use((config)=>{
     if(config.method = "get"){
+<<<<<<< HEAD
         config.params = {...config.data};
         
+=======
+        config.params = {...config.data};  
+>>>>>>> e641015b2ddbbcfdf8871810fa81d59e26d54336
     }
     return config;
 },(err)=>{
@@ -18,10 +22,11 @@ server.interceptors.request.use((config)=>{
 })
 
 // 响应拦截
-server . interceptors.response.use((res)=>{
+server.interceptors.response.use((res)=>{
     if(res.status == 200){
         return res.data;
     }
+    return res;
 },(err)=>{
     return Promise.reject(err);
 })

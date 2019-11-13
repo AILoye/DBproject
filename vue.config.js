@@ -7,6 +7,7 @@ module.exports = {
                 target:"https://m.douban.com",
                 changeOrigin:true
             },
+<<<<<<< HEAD
             "/api":{
                 target:"https://market.douban.com", 
                 changeOrigin:true
@@ -15,6 +16,8 @@ module.exports = {
                 target:"https://shiji.douban.com",
                 changeOrigin:true
             }
+=======
+>>>>>>> e641015b2ddbbcfdf8871810fa81d59e26d54336
         }
     },
 

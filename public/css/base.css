@@ -17,6 +17,10 @@ html{
 body{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    -overflow-y: hidden;
+>>>>>>> e641015b2ddbbcfdf8871810fa81d59e26d54336
     font-family: -apple-system,BlinkMacSystemFont,Droid Sans,PingFang SC,Helvetica,sans-serif;
     background: #f6f6f6;
     font-size: 16px;
