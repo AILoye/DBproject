@@ -5,6 +5,11 @@ import movie from "./movie"
 import book from "./book"
 import group from "./group"
 import bean from "./bean"
+import goods from "./goods"
+import cart from "./cart"
+import address from "./address"
+import order from "./order"
+import commiate from "./commiate"
 Vue.use(VueRouter)
 
 
@@ -20,7 +25,12 @@ const router = new VueRouter({
     movie,
     book,
     group,
-    bean
+    bean,
+    goods,
+    cart,
+    address,
+    order,
+    commiate
   ]
 })
 // 全局守卫
