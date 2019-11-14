@@ -3,10 +3,14 @@ const path =require("path");
 module.exports = {
     devServer:{
         proxy:{
-            "rexxar":{
+            "/rexxar":{
                 target:"https://m.douban.com",
                 changeOrigin:true
             },
+            "/Search":{
+                target:"http://m.360kad.com",
+                changeOrigin:true
+            }
         }
     },
     /**别名配置 */

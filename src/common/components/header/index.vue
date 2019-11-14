@@ -1,13 +1,16 @@
 <template>
   <div class="header">
         <div class="left-box">
-            <a href="javascript:0">
+            <a href="/dbindex">
                 <h1 class="logo">豆瓣</h1>
             </a>
-            <form class="search">
+            <router-link class="search" 
+                tag="form"
+                to="/search"
+            >
                 <i class="iconfont icon-sousuo"></i>
                 <input type="text" placeholder="搜索" />
-            </form>
+            </router-link>
         </div>
         <div class="header-right">
             <a class="exit-btn">退出登录</a>

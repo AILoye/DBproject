@@ -180,7 +180,7 @@ export default {
         async handleGetMovieList (id,ck,for_mobile){         
             let data = await movieDetailApi(id,ck,for_mobile)
             this.detail = data;
-            console.log(this.detail)
+            //console.log(this.detail)
         }
     }
 }

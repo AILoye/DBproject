@@ -34,7 +34,14 @@ export const movieDetailApi = (id,ck,for_mobile)=>http({
         ck,for_mobile
     },
 });
-
+/**搜索 */
+export const SearchlApi = (KeyWord)=>http({
+    method:"get",
+    url:"/Search/SearchPanGuWordResult",
+    data:{
+        KeyWord:KeyWord
+    },
+});
 
 // /api/v2/movie/modules?for_mobile=1&ck=HZ1f\
 
