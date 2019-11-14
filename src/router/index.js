@@ -38,6 +38,7 @@ const router = new VueRouter({
     book,
     group,
     bean,
+
     goods,
     cart,
     address,
