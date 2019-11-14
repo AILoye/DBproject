@@ -5,6 +5,11 @@ import movie from "./movie"
 import book from "./book"
 import group from "./group"
 import bean from "./bean"
+import goods from "./goods"
+import cart from "./cart"
+import address from "./address"
+import order from "./order"
+import commiate from "./commiate"
 import search from "./search"
 Vue.use(VueRouter)
 
@@ -33,6 +38,12 @@ const router = new VueRouter({
     book,
     group,
     bean,
+
+    goods,
+    cart,
+    address,
+    order,
+    commiate,
     search
   ]
 })

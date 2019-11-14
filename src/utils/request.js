@@ -9,7 +9,7 @@ const server = axios.create({
 // 请求拦截器
 server.interceptors.request.use((config)=>{
     if(config.method = "get"){
-        config.params = {...config.data};  
+        config.params = {...config.data};
     }
     loading.loadingMount();
     return config;
