@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import loading from "@lib/loading/index.js"
 const server = axios.create({
     timeout:5000,
     // baseUrl:"",
@@ -12,16 +12,19 @@ server.interceptors.request.use((config)=>{
         config.params = {...config.data};
         
     }
+    loading.loadingMount();
     return config;
 },(err)=>{
     return Promise.reject(err);
 })
 
 // 响应拦截
-server . interceptors.response.use((res)=>{
+server.interceptors.response.use((res)=>{
     if(res.status == 200){
+        loading.loadingDestroy();
         return res.data;
     }
+    
 },(err)=>{
     return Promise.reject(err);
 })

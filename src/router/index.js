@@ -10,6 +10,7 @@ import cart from "./cart"
 import address from "./address"
 import order from "./order"
 import commiate from "./commiate"
+import search from "./search"
 Vue.use(VueRouter)
 
 
@@ -21,6 +22,17 @@ const router = new VueRouter({
       path:"/",
       redirect:"/dbindex"
     },
+    {
+      name:"login",
+      path:"/login",
+      component:_=>import("@pages/login")
+    },
+    {
+      name:"detail",
+      path:"/detail/:id/:title",
+      component:_=>import("@pages/moviedetail"),
+      props:true
+    },
     dbindex,
     movie,
     book,
@@ -30,20 +42,21 @@ const router = new VueRouter({
     cart,
     address,
     order,
-    commiate
+    commiate,
+    search
   ]
 })
-// 全局守卫
-// router . beforeEach( (to, from, next)=>{
-//   if(to.path !="/login" && to.meta . requiredAuth){
-//     if( localStorage . getItem("token")){
-//       next();
-//     }else{
-//       next( {name:"login" , params: {to:to.path}})
-//     }
-//   }else{
-//     next();
-//   }
-// })
+//全局守卫
+router . beforeEach( (to, from, next)=>{
+  if(to.path !="/login" && to.meta . requiredAuth){
+    if( localStorage . getItem("token")){
+      next();
+    }else{
+      next( {name:"login" , params: {to:to.path}})
+    }
+  }else{
+    next();
+  }
+})
 
 export default router

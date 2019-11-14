@@ -14,6 +14,10 @@ module.exports = {
             "/deal":{
                 target:"https://shiji.douban.com",
                 changeOrigin:true
+            },
+            "/Search":{
+                target:"http://m.360kad.com",
+                changeOrigin:true
             }
         }
     },
