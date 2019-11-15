@@ -24,7 +24,23 @@ export const homelife=(name,start,count)=>http({
     data:{
         name:name,
         start:start,
-        count:count
+        count:count,
+        
+    }
+})
+
+/** 
+    接口：豆品详情
+*/ 
+export const goodsApi = (source,start,count,id)=>http({
+    methods:"get",
+    url:"api/v2/recommend",
+    data:{
+        source,
+        start,
+        count,
+        id
+
     }
 })
 //https://market.douban.com/api/v2/market/category/homelife?

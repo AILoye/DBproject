@@ -8,6 +8,8 @@ import VueTouch from 'vue-touch'
 import "./lib/loading/index.js"
 
 
+　
+// import address from 'address'
 
 Vue.config.productionTip = false
 Vue.use(VueTouch,{name:"v-touch"});

@@ -3,11 +3,14 @@
         <div class="tab_box" >
             <!-- 豆瓣推荐 -->
                 <div class="category-tabcon" id="tabcon">
-                    <router-link class="tab-items current"
-                    tag="div" 
-                    to="/goods">
+                    <div class="tab-items current">
                         <ul>
-                            <li class="category-item" v-for="(item,index) in beanlist" :key="index">
+                            <router-link
+                                tag="li" 
+                                :to="'/goods/'+item.id+'/'+item.title" 
+                                class="category-item"
+                                 v-for="item in beanlist" 
+                                 :key="item.id">
                                 <div class="product-card product-card-category">
                                     <a href="#">
                                         <div class="product-cover-wrapper-satine">
@@ -22,9 +25,9 @@
                                         </div>
                                     </a>
                                 </div>
-                            </li>
+                            </router-link>
                         </ul>
-                    </router-link> 
+                    </div> 
                 </div>
                 <div id="loadingMore" class="endMore">更多豆品好物，敬请期待~</div>
     
