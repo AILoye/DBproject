@@ -50,15 +50,15 @@
 </template>
 
 <script>
-import Cookie from "vue-cookies"
+import Cookie from "vue-cookies";
 export default {
   name: "Login",
-  data() {
+  data(){
     return {
       phone: "",
       password: "",
       userInfo: []
-    };
+    }
   },
   methods: {
     

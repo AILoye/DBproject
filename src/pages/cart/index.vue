@@ -15,7 +15,7 @@
                         <input type="checkbox">
 
                         <div class="cpic" href="#">
-                            <img src="https://img1.doubanio.com/view/dianpu_product_item/small/public/p2052838.jpg"></a>
+                            <img src="https://img1.doubanio.com/view/dianpu_product_item/small/public/p2052838.jpg">
                         </div>
 
                         <div class="cmiddle">
@@ -31,7 +31,7 @@
 
                         <div class="cright">
                             <div class="_1nMn_VgU">删除</div>
-                            <div class="_2kz-t9CN">￥198.00</iv>
+                            <div class="_2kz-t9CN">￥198.00
                                 <div class="price">￥178.00</div>
                             </div>
                         </div>

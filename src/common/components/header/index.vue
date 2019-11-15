@@ -43,6 +43,8 @@ export default {
     methods:{
         handleBack(){
             this.$router.back();
+        },
+    },
     data(){
         return{
             status:"未登录"
