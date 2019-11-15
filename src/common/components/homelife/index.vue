@@ -1,12 +1,18 @@
 <template>
- <div  ref="beanrecBody">
+ <div>
     <div class="tab_box" >
         <!-- 家居生活 -->
         <div class="category-tabcon" id="tabcon">
             <div class="tab-items current">
                 <ul>
-                    <li class="category-item" v-for="(item,index) in lifelist" :key="index" >
-                        <div class="product-card product-card-category">
+                    <router-link 
+                    tag="li"
+                     class="category-item"
+                      v-for="item in lifelist"
+                       :key="item.id" 
+                       :to="'/goods/'+item.id+'/'+item.title"
+                       >
+                        <div class="product-card product-card-category">{{item.id}}
                             <a href="https://market.douban.com/campaign/doumaosweater" target="_blank">
                                 <div class="product-cover-wrapper-satine">
                                 <img :src="item.image" alt="豆猫卫衣" class="product-card-cover"></div>
@@ -20,7 +26,7 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </router-link>
                 </ul>
             </div>
         </div>
@@ -28,7 +34,7 @@
 </div>      
 </template>
 <script>
-import BScroll from "better-scroll";
+// import BScroll from "better-scroll";
 import {homelife} from "@api/beanrec"
 export default {
     name:"homelife",
@@ -40,15 +46,14 @@ export default {
     created(){
         this.handleGetLife("classic",0,10)
     },
-     mounted() {
-        new BScroll(this.$refs.beanrecBody)
-    },
+    //  mounted() {
+    //     new BScroll(this.$refs.beanrecBody)
+    // },
 
      methods:{
        async handleGetLife(name,start,count){
             let data=await homelife(name,start,count);
             this.lifelist=data.data.products;
-            console.log(data.data.products)
         }
     }
 }

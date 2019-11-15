@@ -8,7 +8,7 @@ module.exports = {
                 changeOrigin:true
             },
             "/api":{
-                target:"https://market.douban.com", 
+                target:"https://market.douban.com/", 
                 changeOrigin:true
             },
             "/deal":{

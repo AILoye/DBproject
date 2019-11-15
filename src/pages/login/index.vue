@@ -6,20 +6,23 @@
         <span class="account-body-text">登录豆瓣</span>
         <span class="account-body-tips">
           新手机号将自动注册，请详读
-          <a target="_blank" href="https://accounts.douban.com/passport/agreement">豆瓣使用协议、隐私政策</a>
+          <a
+            target="_blank"
+            href="https://accounts.douban.com/passport/agreement"
+          >豆瓣使用协议、隐私政策</a>
         </span>
       </h1>
       <div class="account-form" style="display: block;">
         <!-- login start -->
         <form class="aount-form-info">
           <div class="phone">
-            <input type="text" placeholder="手机号/邮箱" />
+            <input type="text" placeholder="手机号/邮箱" :value="phone" ref="phone" />
           </div>
           <div class="password">
-            <input type="password" placeholder="密码" />
+            <input type="password" placeholder="密码" :value="password" ref="password" />
           </div>
           <div class="login">
-            <button>登录</button>
+            <v-touch @tap="handleGetUser()" class="loginbtn">登录</v-touch>
           </div>
         </form>
         <!-- login end -->
@@ -47,7 +50,37 @@
 </template>
 
 <script>
-export default {};
+import Cookie from "vue-cookies"
+export default {
+  name: "Login",
+  data() {
+    return {
+      phone: "",
+      password: "",
+      userInfo: []
+    };
+  },
+  methods: {
+    
+     handleGetUser() { 
+        this.phone = this.$refs.phone.value;
+        this.password = this.$refs.password.value;
+        
+      this.userInfo.push({
+          phone: this.phone,
+          password: this.password
+        });
+      Cookie.set("userInfo", JSON.stringify(this.userInfo));
+        this.$router.replace('/dbindex');
+        
+      }
+
+
+      
+    },
+
+
+}
 </script>
 
 <style>
@@ -131,7 +164,7 @@ export default {};
   margin: 0.2rem 0;
   width: 100%;
 }
-.login button {
+.login .loginbtn {
   height: 0.44rem;
   width: 100%;
   border-radius: 3px;

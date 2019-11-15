@@ -13,15 +13,31 @@
             </router-link>
         </div>
         <div class="header-right">
-            <a class="exit-btn">退出登录</a>
+            <router-link 
+             class="exit-btn"
+             tag="a"
+             to="/login"
+             >{{status}}</router-link >
             <a href="javascript:0" class="iconfont icon-diannao"></a>
         </div>
   </div>
 </template>
 
 <script>
+import Cookie from "vue-cookies"
 export default {
-    name:"Header"
+    name:"Header",
+    data(){
+        return{
+            status:"未登录"
+        }
+    },
+    mounted(){
+        if(Cookie.get("userInfo")){//初始状态值为“登录” 如果cookie中存在用户
+            // 状态就改为已登录，把用户名设置为状态值
+            this.status = (JSON.parse(Cookie.get("userInfo"))[0].phone)
+        }
+    }
 };
 </script>
 
