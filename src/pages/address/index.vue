@@ -12,10 +12,10 @@
       <!-- 城市列表 -->
       <van-index-bar>
           <div class="city_list">
-              <van-index-anchor index="A" class="city_list_item">A</van-index-anchor>
+              <van-index-anchor index="A" class="city_list_item"></van-index-anchor>
               
               <div class="city_list_name">
-                  <v-touch tag="div" class="city_list_name_item">
+                  <v-touch tag="div" class="city_list_name_item" >
                         北京
                   </v-touch>
               </div>
@@ -38,7 +38,8 @@ Vue.use(IndexBar).use(IndexAnchor);
 
 export default {
   name:"Address",
-  create(){
+  created(){
+      this.$store.dispatch("address/handleAsyncGetAddress")
     // if(!(sessionStorage.getItem("cityList")&& sessionStorage.getItem("hotCity"))){
     //    //address模块名称(namespace:true)
     //   this.$store.dispatch("address/handleAsyncGetAddress")
@@ -49,7 +50,21 @@ export default {
     //   cityList:state=>state.city.cityList,
     //   hotCity:state=>state.city.hotCity,
     // })
-  }
+  },
+  // methods:{
+  //   handleTo(index){
+  //     let t=this.refs.cityList.querySelectorAll(".city_list_item")[index].offsetTop;
+  //      this.$refs.scroll.handleScrollTop(-t);
+  //      this.$refs.scroll.handleScrollTop=200;
+  //        this.$refs.cityContainer.scrollTop=t;
+  //   
+  // },
+  // handleTo(child){
+  //   let path=this.$route.params.path||"/movie";
+  //   this.$router.push(path);
+  //   this.$store.commit("city/handleUpdateCity",child)
+  // }
+  // }
 
 }
 </script>

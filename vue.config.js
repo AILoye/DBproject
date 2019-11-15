@@ -21,6 +21,10 @@ module.exports = {
               // pathRewrite:{
               //   '^/lucky':''
               // }
+            },
+            "/Search":{
+                target:"http://m.360kad.com",
+                changeOrigin:true
             }
         }
     },

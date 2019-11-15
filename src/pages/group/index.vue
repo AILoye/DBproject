@@ -67,90 +67,6 @@
                         <div class="btn btn-add">加入</div>
                       </a>
                     </li>
-                    <li class="has-add-btn len-2">
-                      <a href="/group/32075">
-                        <img
-                          src="https://img3.doubanio.com/view/group/sqxs/public/79804a41854ea50.jpg"
-                          alt="离婚的心路"
-                          class="avatar"
-                        />
-                        <div class="detail" data-one-line="0">
-                          <h1>离婚的心路</h1>
-                          <h4>19612人</h4>
-                        </div>
-                        <div class="btn btn-add">加入</div>
-                      </a>
-                    </li>
-                    <li class="has-add-btn len-2">
-                      <a href="/group/32075">
-                        <img
-                          src="https://img3.doubanio.com/view/group/sqxs/public/79804a41854ea50.jpg"
-                          alt="离婚的心路"
-                          class="avatar"
-                        />
-                        <div class="detail" data-one-line="0">
-                          <h1>离婚的心路</h1>
-                          <h4>19612人</h4>
-                        </div>
-                        <div class="btn btn-add">加入</div>
-                      </a>
-                    </li>
-                    <li class="has-add-btn len-2">
-                      <a href="/group/32075">
-                        <img
-                          src="https://img3.doubanio.com/view/group/sqxs/public/79804a41854ea50.jpg"
-                          alt="离婚的心路"
-                          class="avatar"
-                        />
-                        <div class="detail" data-one-line="0">
-                          <h1>离婚的心路</h1>
-                          <h4>19612人</h4>
-                        </div>
-                        <div class="btn btn-add">加入</div>
-                      </a>
-                    </li>
-                    <li class="has-add-btn len-2">
-                      <a href="/group/32075">
-                        <img
-                          src="https://img3.doubanio.com/view/group/sqxs/public/79804a41854ea50.jpg"
-                          alt="离婚的心路"
-                          class="avatar"
-                        />
-                        <div class="detail" data-one-line="0">
-                          <h1>离婚的心路</h1>
-                          <h4>19612人</h4>
-                        </div>
-                        <div class="btn btn-add">加入</div>
-                      </a>
-                    </li>
-                    <li class="has-add-btn len-2">
-                      <a href="/group/32075">
-                        <img
-                          src="https://img3.doubanio.com/view/group/sqxs/public/79804a41854ea50.jpg"
-                          alt="离婚的心路"
-                          class="avatar"
-                        />
-                        <div class="detail" data-one-line="0">
-                          <h1>离婚的心路</h1>
-                          <h4>19612人</h4>
-                        </div>
-                        <div class="btn btn-add">加入</div>
-                      </a>
-                    </li>
-                    <li class="has-add-btn len-2">
-                      <a href="/group/32075">
-                        <img
-                          src="https://img3.doubanio.com/view/group/sqxs/public/79804a41854ea50.jpg"
-                          alt="离婚的心路"
-                          class="avatar"
-                        />
-                        <div class="detail" data-one-line="0">
-                          <h1>离婚的心路</h1>
-                          <h4>19612人</h4>
-                        </div>
-                        <div class="btn btn-add">加入</div>
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </section>
@@ -164,10 +80,11 @@
 <script>
 import Header from "@common/components/header";
 export default {
-  name: "group",
+  name: "Group",
   components: {
     Header
-  }
+  },
+  
 };
 </script>
 

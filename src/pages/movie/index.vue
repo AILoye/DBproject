@@ -168,7 +168,7 @@ export default {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  padding: 0.2rem 0;
+  padding-bottom: 0.2rem;
   width: 100%;
 }
 .hotFilm h2 {
@@ -176,6 +176,10 @@ export default {
   align-items: center;
   color: rgba(0,0,0,.5);
   font-size: 0.2rem;
+  background-color: #fff;
+  height: .5rem;
+  position: sticky;
+  top: 0;
 }
 .hotFilm h2 span {
   font-weight: 400;

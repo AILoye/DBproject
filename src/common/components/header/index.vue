@@ -1,15 +1,22 @@
 <template>
   <div class="header">
         <div class="left-box">
-            <a href="javascript:0">
+            <a href="/dbindex">
                 <h1 class="logo">豆瓣</h1>
             </a>
-            <form class="search">
+            <router-link class="search" 
+                tag="form"
+                to="/search"
+            >
                 <i class="iconfont icon-sousuo"></i>
                 <input type="text" placeholder="搜索" />
-            </form>
+            </router-link>
         </div>
+        <v-touch class="icon_left" tag="div" @tap="handleBack()">
+            <i calss="iconfont" v-if="icon">&#xe606;</i>
+        </v-touch>
         <div class="header-right">
+            
             <a class="exit-btn">退出登录</a>
             <a href="javascript:0" class="iconfont icon-diannao"></a>
         </div>
@@ -18,7 +25,22 @@
 
 <script>
 export default {
-    name:"Header"
+    name:"Header",
+    props:{
+        title:{
+            type:String,
+            default:"豆瓣"
+        },
+        icon:{
+            type:Boolean
+        }
+
+    },
+    methods:{
+        handleBack(){
+            this.$router.back();
+        }
+    }
 };
 </script>
 
@@ -80,5 +102,13 @@ export default {
 }
 .exit-btn{
     padding: 0 .15rem;
+}
+.header .icon_left{
+    position: absolute;
+    left:.2rem;
+}
+
+.header .icon_left i{
+    font-size: .4rem;
 }
 </style>

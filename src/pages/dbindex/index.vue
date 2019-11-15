@@ -140,7 +140,7 @@ import Header from "@common/components/header";
 export default {
   name: "Dbindex",
   components: {
-    Header
+    Header,
   }
 };
 </script>

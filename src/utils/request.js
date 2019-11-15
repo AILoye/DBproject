@@ -23,7 +23,7 @@ server.interceptors.response.use((res)=>{
         loading.loadingDestroy();//消失return 之后不再执行
         return res.data;
     }
-    return res;
+    
 },(err)=>{
     return Promise.reject(err);
 })

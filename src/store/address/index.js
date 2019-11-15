@@ -1,4 +1,4 @@
-import {addressApi} from "@api/address"
+import {addressApi} from "@api/address";
 
  let state = {
         // cityList:JSON.parse(sessionStorage.getItem("cityList"))||[],
@@ -8,22 +8,23 @@ import {addressApi} from "@api/address"
   }
 
  let actions = {//vuex中请求数据
-        async handleAsyncGetAddress(){
+        async handleAsyncGetAddress({commit}){
          let data = await addressApi();
-         console.log(data)
+         console.log(data);
+
+         commit("handleGetCity",data.data.cities)
 
         }
   }
  let mutations={
-    // handleAsyncGetAddress(state,cities){
-    //     console.log(cities);
+      handleGetCity(state,cities){
+        console.log(cities);
     //     let hotCity=[],cityList=[];
 
     //     //热门城市
     //     hotCity=[
     //         {
-    //             id:"",
-    //             nm:""
+    //             id:"",   nm:""
     //         }
     //     ]
     //     for(var i=0;i<cities.length;i++){
@@ -66,7 +67,7 @@ import {addressApi} from "@api/address"
     //             }
     //         }
     //     }
-    //    }
+      }
 
 
   }
@@ -78,6 +79,6 @@ import {addressApi} from "@api/address"
 export default {
     state,
     actions,
-    // mutations,
+    mutations,
     namespaced:true
 }
