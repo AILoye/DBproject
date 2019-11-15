@@ -111,7 +111,10 @@
             <div class="product-selector-btn">
               <div class="buttons">
                 <button class="btn-el cart-btn">加入购物车</button>
-                <button class="btn-el buy-btn">立即购买</button>
+                <router-link class="btn-el buy-btn"
+                tag="button"
+                to="/cart"
+                >立即购买</router-link>
               </div>
             </div>
           </div>
