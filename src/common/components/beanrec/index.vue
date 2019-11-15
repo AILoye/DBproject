@@ -1,5 +1,5 @@
 <template>
- <div  ref="beanrecBody">
+<scroll ref="scroll">
         <div class="tab_box" >
             <!-- 豆瓣推荐 -->
                 <div class="category-tabcon" id="tabcon">
@@ -29,13 +29,13 @@
                 <div id="loadingMore" class="endMore">更多豆品好物，敬请期待~</div>
     
         </div>
-  </div>
+</scroll>
 </template>
 
 <script>
 // 引入接口v-for="(item,index) in "
 import {beanrec} from "@api/beanrec";
-import BScroll from "better-scroll";
+// import BScroll from "better-scroll";
 export default {
     name:"beanrec",
     //数据遍历
@@ -44,21 +44,56 @@ export default {
             beanlist:[]
         }
     },
+    //检测(数据已经加载完)
+    watch:{
+        beanrec(){
+            this.$refs.scroll.hadlefinishPullDown();
+
+        }
+    },
+
     //数据请求
     created() {
         this.handleGetbeanrec("classic",0,10)
     },
     mounted() {
-        new BScroll(this.$refs.beanrecBody)
+  // new BScroll(this.$refs.beanrecBody)
+
+        // console.log(this.$refs.scroll)
+        this.$refs.scroll.handlepullingDown(()=>{
+            console.log(111)
+            //数据的更新（下拉加载更多数据）
+            // var arr=[10,20,34,42,60];
+            // var index=parseInt(0+Math.random()*6);
+            // this.handleGetbeanrec(arr[index]);
+        });
+      
+         
+         //调用
+        this.$refs.scroll.hadleScroll();
+
+        //上拉加载更多
+        this.$refs.scroll.handlepullingUp(()=>{
+            console.log(222)
+            /** 
+             * limit10   page1
+             *           page2
+             *           page3
+             * 数据要合并，
+             * this.beanlist=[...this.beanlist,...data.data.products]
+            */
+        })
     },
 
     methods:{
         async handleGetbeanrec(name,start,count){
             let data =await beanrec(name,start,count);
-           this.beanlist=data.data.products;
+            this.beanlist=data.data.products;
             // console.log(data.data.products);
-            console.log(this.beanlist)
+            // console.log(this.beanlist)
         }
+
+       
     },
     
 }
@@ -71,7 +106,8 @@ export default {
     left:0;
     right:0;
     bottom:0;
-    padding-top:2rem;
+    padding-top:1.8rem;
+
 }
 .product-cover-wrapper-satine{
     width:1.67rem;
@@ -109,6 +145,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     padding:0.15rem 0.2rem;
+    background:#fff;
 
 }
 .category-tabcon ul .category-item {

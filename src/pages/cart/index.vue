@@ -65,11 +65,12 @@ export default {
 
 <style>
 .cart{
-    width:100%;height:3rem;
-background:#d33;
-font-size:1rem;
-text-align:center;
-line-height:3rem;
+    width:100%;
+    height:0.5rem;
+    background:#d33;
+    font-size:0.3rem;
+    text-align:center;
+    line-height:0.5rem;
 }
 .CZ1dSWwM {
 text-align: center;
@@ -147,9 +148,11 @@ margin: 0.10rem 0 1.00rem;
 .footer{
     position:fixed;
     height:0.5rem;
+    line-height:0.5rem;
     width:100%;
     background-color:#fff;
-    padding-bottom:3.2rem;
+    padding-bottom:.72rem;
+    justify-content: center;
     align-items:center;
     bottom: 0;
     left:0;

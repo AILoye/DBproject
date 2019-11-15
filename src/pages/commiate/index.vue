@@ -6,7 +6,9 @@
             <div class="_3pWMWuQ9">
                 <span>收货地址</span>
                 <!-- <i class="newadd">+</i> -->
-                <router-link to="address" tag="i"><cube-button type="submit">+</cube-button></router-link>
+                <router-link to="address" tag="i">
+                    <span>北京</span>
+                    </router-link>
             </div>
             <div class="j8ur1p_v with_icon selected">
                 <div class="E73Ba7Gg">

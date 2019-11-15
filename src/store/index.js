@@ -1,6 +1,6 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import address from './address'
+import Vue from "vue"
+import Vuex from "vuex"
+import address from "./address"
 
 Vue.use(Vuex)
 

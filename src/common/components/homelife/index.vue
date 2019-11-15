@@ -1,5 +1,5 @@
 <template>
- <div  ref="beanrecBody">
+<scroll ref="scroll">
     <div class="tab_box" >
         <!-- 家居生活 -->
         <div class="category-tabcon" id="tabcon">
@@ -25,10 +25,10 @@
             </div>
         </div>
     </div>  
-</div>      
+</scroll>  
 </template>
 <script>
-import BScroll from "better-scroll";
+// import BScroll from "better-scroll";
 import {homelife} from "@api/beanrec"
 export default {
     name:"homelife",
@@ -37,12 +37,35 @@ export default {
             lifelist:[]
         }
     },
+    watch:{
+        homelife(){
+            this.$refs.scroll.hadlefinishPullDown()
+        }
+    },
     created(){
         this.handleGetLife("classic",0,10)
     },
-     mounted() {
-        new BScroll(this.$refs.beanrecBody)
-    },
+    
+ 
+    
+    mounted() {
+        // console.log(this.$refs.scroll)
+        this.$refs.scroll.handlepullingDown(()=>{
+            console.log(111)
+            //数据的更新（下拉加载更多数据）
+            // var arr=[10,20,34,42,60];
+            // var index=parseInt(0+Math.random()*6);
+            // this.handleGetbeanrec(arr[index]);
+        });
+        //new BScroll(this.$refs.beanrecBody)
+        
+        this.$refs.scroll.hadleScroll();
+
+        //上拉加载更多
+        this.$refs.scroll.handlepullingUp(()=>{
+            console.log(222)
+        })
+   },
 
      methods:{
        async handleGetLife(name,start,count){
@@ -54,6 +77,9 @@ export default {
 }
 </script>
 <style>
+#tabcon{
+    background-color: #fff;
+}
 .tab_box{
     position:absolute;
     top:0;

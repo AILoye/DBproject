@@ -4,10 +4,10 @@ export default {
     component:_=>import("@pages/bean"),
     name:"bean",
     children:[
-        // {
-        //     path:"/bean",
-        //     redirect:"/bean/beanrec"
-        // },
+        {
+            path:"/bean",
+            redirect:"/bean/beanrec"
+        },
         {
             path:"beanrec",
             component:_=>import("@common/components/beanrec"),

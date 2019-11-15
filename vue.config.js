@@ -7,13 +7,20 @@ module.exports = {
                 target:"https://m.douban.com",
                 changeOrigin:true
             },
-            "/api":{
-                target:"https://market.douban.com", 
-                changeOrigin:true
-            },
+            // "/api":{
+            //     target:"https://market.douban.com", 
+            //     changeOrigin:true
+            // },
             "/deal":{
                 target:"https://shiji.douban.com",
                 changeOrigin:true
+            },
+             "/api":{
+              target:"http://39.97.33.178",
+              changeOrigin:true,
+              // pathRewrite:{
+              //   '^/lucky':''
+              // }
             }
         }
     },

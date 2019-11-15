@@ -51,13 +51,17 @@
                 </div>
         </div>
         <router-view></router-view>
+        <!-- <Loading/> -->
     </div>
 </template>
 <script>
-
+// import Loading from "@lib/loading"
 export default {
     name:"bean",
-    
+    //局部注册
+    // components:{
+    //     Loading
+    // }
 }
 </script>
 
