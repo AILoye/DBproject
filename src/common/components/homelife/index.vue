@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
 <scroll ref="scroll">
-=======
- <div>
->>>>>>> aloye
     <div class="tab_box" >
         <!-- 家居生活 -->
         <div class="category-tabcon" id="tabcon">
@@ -55,7 +51,6 @@ export default {
     created(){
         this.handleGetLife("classic",0,10)
     },
-<<<<<<< HEAD
     
  
     
@@ -77,11 +72,6 @@ export default {
             console.log(222)
         })
    },
-=======
-    //  mounted() {
-    //     new BScroll(this.$refs.beanrecBody)
-    // },
->>>>>>> aloye
 
      methods:{
        async handleGetLife(name,start,count){
