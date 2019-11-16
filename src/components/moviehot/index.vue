@@ -3,7 +3,7 @@
     <router-link
           href="#" 
           class="movie-item" 
-          v-for="item in movieList"
+          v-for="item in movieHotList"
           :key="item.id"
           :to="'/detail/'+item.id+'/'+item.title"
           >
@@ -39,7 +39,7 @@ export default {
     name:"movieHot",
   data() {
     return {
-      movieList: []
+      movieHotList: []
     };
   },
   async created() {
@@ -48,9 +48,9 @@ export default {
   methods: {
     async handleGetMovieList(for_mobile, ck) {
         let data = await movieHotApi(for_mobile, ck);
-        this.movieList = data.modules[6].data.subject_collection_boards[0].items;
-        this.movieList.splice(6, 14);
-    //   console.log(this.movieHotList)
+        this.movieHotList = data.modules[6].data.subject_collection_boards[0].items;
+        this.movieHotList.splice(6, 14);
+        console.log(this.movieHotList)
     }
   }
 };

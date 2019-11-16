@@ -1,7 +1,9 @@
 <template>
   <div id="app">
+    <keep-alive exclude="Detail,Search">
     <router-view></router-view>
     <!-- <MessageBox/> -->
+    </keep-alive>
   </div>
   
 </template>
