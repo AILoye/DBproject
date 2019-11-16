@@ -78,11 +78,12 @@
   </div>
 </template>
 <script>
+
 import Header from "@common/components/header";
 export default {
   name: "Group",
   components: {
-    Header
+    Header,
   },
   
 };

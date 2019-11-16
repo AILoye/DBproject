@@ -55,9 +55,9 @@ export default {
    });
 
   },
-  // activated(){
+  activated(){
 
-  // },
+  },
   methods: {
     async handleGetMovieList(for_mobile, ck) {
       let data = await movieNowApi(for_mobile, ck);
@@ -65,10 +65,6 @@ export default {
       this.movieComList = sessionStorage.getItem("movieComList") ? 
       JSON.parse(sessionStorage.getItem("movieComList")).modules[4].data.subject_collection_boards[0].items:data.modules[4].data.subject_collection_boards[0].items ;
         this.movieComList.splice(9,66)
-    // this.arr = sessionStorage.getItem("movieComList")
-      
-      // console.log(JSON.parse(this.arr))
-      
       
     },
     handlepullingDown(){

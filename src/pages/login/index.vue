@@ -2,7 +2,7 @@
   <div>
     <div class="account-body">
       <h1 class="account-body-title login-label-phone">
-        <a href="javascript:;" class="cancel icon login-cancel">x</a>
+        <v-touch @tap="closeLogin()" href="javascript:;" class="cancel icon login-cancel" >x</v-touch>
         <span class="account-body-text">登录豆瓣</span>
         <span class="account-body-tips">
           新手机号将自动注册，请详读
@@ -61,21 +61,22 @@ export default {
     }
   },
   methods: {
-    
-     handleGetUser() { 
-        this.phone = this.$refs.phone.value;
-        this.password = this.$refs.password.value;
-        
-      this.userInfo.push({
-          phone: this.phone,
-          password: this.password
-        });
-      Cookie.set("userInfo", JSON.stringify(this.userInfo));
-        this.$router.replace('/dbindex');
-        
-      }
+  
+    handleGetUser() { 
+      this.phone = this.$refs.phone.value;
+      this.password = this.$refs.password.value;
+      
+    this.userInfo.push({
+        phone: this.phone,
+        password: this.password
+      });
+    Cookie.set("userInfo", JSON.stringify(this.userInfo));
+      this.$router.replace('/dbindex');
+    },
 
-
+    closeLogin(){
+      this.$router.back()
+    }
       
     },
 
