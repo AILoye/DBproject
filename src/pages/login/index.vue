@@ -72,11 +72,10 @@ export default {
       });
     Cookie.set("userInfo", JSON.stringify(this.userInfo));
       this.$router.replace('/dbindex');
-      
     },
 
     closeLogin(){
-      
+      this.$router.back()
     }
       
     },

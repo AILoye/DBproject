@@ -5,18 +5,17 @@
         <div class="scroll-area">
           <!-- header-wrap start -->
           <div class="header-wrap">
-            <div
-              class="header-img"
-              
-            ></div>
+            <div class="header-img">
+              <img :src="goodsInfo.image"/>
+            </div>
             <div class="head-product-info">
               <div class="product-title">{{goodsInfo.title}}</div>
               <div class="product-price">
                 <span class="price-item">
                   <em>¥</em>
-                  <em class="price-num">78</em>
+                  <em class="price-num">{{goodsInfo.price}}</em>
                   <em>/本</em>
-                  <del class="act-price">¥88</del>
+                  <del class="act-price">¥{{goodsInfo.promote_price}}</del>
                 </span>
               </div>
               <div class="product-tag">
@@ -131,16 +130,17 @@ export default {
   props: ["id"],
   data(){
       return{
-          goodsInfo:{}
+          goodsInfo:[]
       }
   },
   async created(){
         this.handleGetGoodsList("product",0,10,this.id)
     },
     methods:{
-        async handleGetGoodsList (source,start,count,id){         
+        async handleGetGoodsList (source,start,count,id){   
+            let index = Math.round(Math.random()*9);      
             let data = await goodsApi(source,start,count,id)
-            this.goodsInfo = data.data.products;
+            this.goodsInfo = data.data.products[index];
             console.log(this.goodsInfo)
         }
     }
@@ -173,10 +173,12 @@ export default {
 }
 .header-img {
   width: 100%;
-  padding-top: 108%;
+  background-color: #e6e6e6;
+}
+.header-img img{
+  width: 100%;
   background-size: cover;
   background-position: 50%;
-  background-color: #e6e6e6;
 }
 .header-wrap .head-product-info {
   text-align: left;

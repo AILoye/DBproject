@@ -32,14 +32,14 @@ export const homelife=(name,start,count)=>http({
 /** 
     接口：豆品详情
 */ 
-export const goodsApi = (source,start,count,id)=>http({
+export const goodsApi = (source,start,count,product_id)=>http({
     methods:"get",
     url:"api/v2/recommend",
     data:{
         source,
         start,
         count,
-        id
+        product_id
 
     }
 })
