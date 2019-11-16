@@ -4,22 +4,37 @@
       <div class="hot_container">
           <div class="hot_city">热门城市</div> 
           <div class="hc_list" >
-            <div class="hc_city_name" >
-     
+            <div class="hc_city_name" v-for="item in hotCity"  :key="item.id">
+              {{item.nm}} 
             </div>
           </div>
       </div>
       <!-- 城市列表 -->
-      <van-index-bar>
+      <van-index-bar >
           <div class="city_list">
-              <van-index-anchor index="A" class="city_list_item"></van-index-anchor>
-              
-              <div class="city_list_name">
-                  <v-touch tag="div" class="city_list_name_item" >
-                        北京
+            <div v-for="(item,index) in cityList"
+              :key="index">
+              <van-index-anchor class="city_list_item" 
+              :key="index"
+              >
+                <!-- <div class="city_list_item" 
+              v-for="(item,index) in cityList" :key="index"> -->
+                    <div>{{item.index}}</div>
+                
+                
+                <div class="city_list_name">
+                  <v-touch tag="div" class="city_list_name_item"
+                  @tap="handleTo(child)"
+                  v-for="child in item.list" :key="child.id"  
+                 >
+                        {{child.nm}}
                   </v-touch>
               </div>
-          </div>
+              </van-index-anchor>
+            </div>
+            </div>
+              
+          <!-- </div> -->
 
       </van-index-bar>
     </div>
@@ -39,32 +54,26 @@ Vue.use(IndexBar).use(IndexAnchor);
 export default {
   name:"Address",
   created(){
+      // this.$store.dispatch("address/handleAsyncGetAddress")
+    if(!(sessionStorage.getItem("cityList") && sessionStorage.getItem("hotCity"))){
+       //address模块名称(namespace:true)
       this.$store.dispatch("address/handleAsyncGetAddress")
-    // if(!(sessionStorage.getItem("cityList")&& sessionStorage.getItem("hotCity"))){
-    //    //address模块名称(namespace:true)
-    //   this.$store.dispatch("address/handleAsyncGetAddress")
-    // }
+    }
   },
   computed:{
-    // ...mapState({
-    //   cityList:state=>state.city.cityList,
-    //   hotCity:state=>state.city.hotCity,
-    // })
+    ...mapState({
+      cityList:state=>state.address.cityList,
+      hotCity:state=>state.address.hotCity,
+    })
   },
-  // methods:{
-  //   handleTo(index){
-  //     let t=this.refs.cityList.querySelectorAll(".city_list_item")[index].offsetTop;
-  //      this.$refs.scroll.handleScrollTop(-t);
-  //      this.$refs.scroll.handleScrollTop=200;
-  //        this.$refs.cityContainer.scrollTop=t;
-  //   
-  // },
-  // handleTo(child){
-  //   let path=this.$route.params.path||"/movie";
-  //   this.$router.push(path);
-  //   this.$store.commit("city/handleUpdateCity",child)
-  // }
-  // }
+  methods:{
+    handleTo(child){
+      let path=this.$route.params.path||"/commiate";
+      this.$router.push(path);
+      //修改数据
+      this.$store.commit("address/handleUpdateCity",child)
+    }
+  }
 
 }
 </script>
@@ -73,7 +82,7 @@ export default {
   .city_container {
   height: 100%;
   overflow: auto;
-    background: #ebebeb;
+  background: #ebebeb;
 
 }
 /*热门城市*/
@@ -93,10 +102,11 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-.hot_city_name {
-  margin-top: 0.3rem;
-  margin-left: 0.26rem;
-  width: 1.9rem;
+.hc_city_name{
+  /* margin-top: 0.3rem;
+  margin-left: 0.26rem; */
+  padding:0.1rem;
+  width: 0.9rem;
   height: 0.66rem;
   background: #fff;
   text-align: center;

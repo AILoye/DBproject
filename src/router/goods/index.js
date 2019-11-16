@@ -1,6 +1,6 @@
 export default {
     name:"goods",
-    path:"/goods/:id/:title",
+    path:"/goods",
     props:true,
     component:_=>import("@pages/goods"),
 }

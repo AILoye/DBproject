@@ -4,10 +4,11 @@
         <!-- 添加新的收货地址 -->
         <div class="_1DTBWCEg">
             <div class="_3pWMWuQ9">
+                <i calss="iconfont" icon>&#xe646;</i>
                 <span>收货地址</span>
                 <!-- <i class="newadd">+</i> -->
                 <router-link to="address" tag="i">
-                    <span>北京</span>
+                    <span>{{this.$store.state.address.nm}}</span>
                     </router-link>
             </div>
             <div class="j8ur1p_v with_icon selected">

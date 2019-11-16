@@ -7,20 +7,20 @@ module.exports = {
                 target:"https://m.douban.com",
                 changeOrigin:true
             },
-            // "/api":{
-            //     target:"https://market.douban.com", 
-            //     changeOrigin:true
-            // },
+            "/api":{
+                target:"https://market.douban.com", 
+                changeOrigin:true
+            },
             "/deal":{
                 target:"https://shiji.douban.com",
                 changeOrigin:true
             },
-             "/api":{
+             "/lucky":{
               target:"http://39.97.33.178",
               changeOrigin:true,
-              // pathRewrite:{
-              //   '^/lucky':''
-              // }
+              pathRewrite:{
+                '^/lucky':''
+              }
             },
             "/Search":{
                 target:"http://m.360kad.com",

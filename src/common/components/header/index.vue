@@ -13,7 +13,7 @@
             </router-link>
         </div>
         <v-touch class="icon_left" tag="div" @tap="handleBack()">
-            <i calss="iconfont" v-if="icon">&#xe606;</i>
+            <i calss="iconfont" v-if="icon">&#xe646;</i>
         </v-touch>
         <div class="header-right">
             <router-link 

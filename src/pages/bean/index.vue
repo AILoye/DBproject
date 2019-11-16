@@ -55,6 +55,9 @@
     </div>
 </template>
 <script>
+
+//引入封装好的js方法
+import messageBox from "../../lib/messageBox/index";//./lib/messageBox/index
 // import Loading from "@lib/loading"
 export default {
     name:"bean",
@@ -62,6 +65,16 @@ export default {
     // components:{
     //     Loading
     // }
+    created(){
+        messageBox({
+        title:"附近有甜品店吗",
+        content:"不然怎么见到你，周围都是甜蜜的味道呢",
+        ok:()=>{
+            alert(11111111111)
+        }
+        })
+    }
+    
 }
 </script>
 
